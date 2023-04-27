@@ -1,7 +1,8 @@
-import { SimpleGrid, Text, Image } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/image";
 import useScreenshots from "../hooks/useScreenshots";
 import { Spinner } from "@chakra-ui/spinner";
 import getCroppedImageUrl from "../services/image-url";
+import { SimpleGrid, Text } from "@chakra-ui/layout";
 
 const SsGrid = ({ gameId }: { gameId: number }) => {
   const { data, error, isLoading } = useScreenshots(gameId);

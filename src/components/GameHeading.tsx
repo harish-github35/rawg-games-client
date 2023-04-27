@@ -1,7 +1,8 @@
-import { Heading } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/layout";
 import useGenres from "../hooks/useGenres";
 import usePlatforms from "../hooks/usePlatfoms";
 import useGameQueryStore from "../store";
+import { Helmet } from "react-helmet";
 
 const GameHeading = () => {
   const pId = useGameQueryStore((s) => s.gameQuery.platformId);
@@ -16,9 +17,16 @@ const GameHeading = () => {
   const heading = `${p} ${g} Games`;
 
   return (
-    <Heading marginY={5} fontSize="5xl" as="h1">
-      {heading}
-    </Heading>
+    <>
+      {heading.trim() !== "Games" && (
+        <Helmet>
+          <title>{heading} | Rawg Games Client</title>
+        </Helmet>
+      )}
+      <Heading marginY={5} fontSize="5xl" as="h1">
+        {heading}
+      </Heading>
+    </>
   );
 };
 

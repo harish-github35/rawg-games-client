@@ -1,6 +1,7 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/react";
 import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
+import { Button } from "@chakra-ui/button";
+import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/menu";
 
 const SortSelector = () => {
   const selectedOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);

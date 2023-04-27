@@ -1,4 +1,4 @@
-import { SimpleGrid, Text } from "@chakra-ui/react";
+import { SimpleGrid, Text } from "@chakra-ui/layout";
 import { Game } from "../Types";
 import DList from "./DList";
 import CriticScore from "./CriticScore";

@@ -1,4 +1,5 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/button";
+import { Text } from "@chakra-ui/layout";
 import { useState } from "react";
 
 interface Props {

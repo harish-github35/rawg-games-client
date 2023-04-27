@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/layout";
 import { isRouteErrorResponse, useRouteError } from "react-router";
 import NavBar from "../components/NavBar";
+import { Helmet } from "react-helmet";
 
 const ErrorPage = () => {
   const error = useRouteError();
@@ -8,6 +9,11 @@ const ErrorPage = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          {isNotfound ? "404 Page Not Found | Rawg Games Client" : "Error"}
+        </title>
+      </Helmet>
       <NavBar />
       <Flex paddingTop={10} justifyContent="center" alignItems="center">
         <Box>

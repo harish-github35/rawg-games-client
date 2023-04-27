@@ -1,10 +1,11 @@
-import { Text, SimpleGrid, Spinner, Box } from "@chakra-ui/react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
 import { Link } from "react-router-dom";
+import { SimpleGrid, Box, Text } from "@chakra-ui/layout";
+import { Spinner } from "@chakra-ui/spinner";
 
 const GameGrid = () => {
   //prettier-ignore
@@ -53,15 +54,6 @@ const GameGrid = () => {
           ))
         )}
       </SimpleGrid>
-      {/* {hasNextPage && (
-        <Button
-          marginY={5}
-          onClick={() => fetchNextPage()}
-          disabled={isFetchingNextPage}
-        >
-          {isFetchingNextPage ? "loading data" : "Load more"}
-        </Button>
-      )} */}
     </InfiniteScroll>
   );
 };

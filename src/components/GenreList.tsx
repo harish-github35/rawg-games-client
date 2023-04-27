@@ -1,5 +1,7 @@
-//prettier-ignore
-import {  Button,  HStack,  Heading,  Image,  List,  ListItem,  Spinner}from "@chakra-ui/react";
+import { Button } from "@chakra-ui/button";
+import { HStack, Heading, List, ListItem } from "@chakra-ui/layout";
+import { Image } from "@chakra-ui/image";
+import { Spinner } from "@chakra-ui/spinner";
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
