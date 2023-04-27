@@ -3,7 +3,14 @@ import { ReactNode } from "react";
 
 const GameCardContainer = ({ children }: { children: ReactNode }) => {
   return (
-    <Box borderRadius={10} overflow="hidden">
+    <Box
+      borderRadius={10}
+      overflow="hidden"
+      transition="transform .3s ease"
+      _hover={{
+        transform: "scale(1.05)",
+      }}
+    >
       {children}
     </Box>
   );

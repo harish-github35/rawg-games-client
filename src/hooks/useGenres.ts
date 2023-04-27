@@ -3,12 +3,7 @@ import json from "../data/genres.json";
 
 import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
-
-export interface Genre {
-  id: number;
-  name: string;
-  image_background: string;
-}
+import { Genre } from "../Types";
 
 // const useGenres = () => useData<Genre>("/genres")
 // const useGenres = () => ({
@@ -19,7 +14,7 @@ export interface Genre {
 const useGenres = () =>
   useQuery({
     queryKey: ["genres"],
-    queryFn: new APIClient<Genre>("genres").getAll,
+    queryFn: new APIClient<Genre>("/genres").getAll,
     staleTime: 24 * 60 * 60 * 1000, // 24h
     initialData: { results: json },
   });

@@ -4,6 +4,7 @@ import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GameCardSkeleton from "./GameCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
+import { Link } from "react-router-dom";
 
 const GameGrid = () => {
   //prettier-ignore
@@ -44,9 +45,11 @@ const GameGrid = () => {
 
         {data?.pages?.map((page) =>
           page.results.map((game) => (
-            <GameCardContainer key={game.id}>
-              <GameCard game={game} />
-            </GameCardContainer>
+            <Link to={`/games/${game.slug}`} key={game.id}>
+              <GameCardContainer>
+                <GameCard game={game} />
+              </GameCardContainer>
+            </Link>
           ))
         )}
       </SimpleGrid>

@@ -2,7 +2,7 @@ import axios, { AxiosRequestConfig } from "axios";
 
 const key = import.meta.env.VITE_API_KEY;
 
-const rawg = axios.create({
+export const rawg = axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
     key: key,
@@ -30,6 +30,12 @@ class APIClient<T> {
   getAll(requestConfig?: AxiosRequestConfig) {
     return rawg
       .get<FetchResponse<T>>(this.endpoint, requestConfig)
+      .then((res) => res.data);
+  }
+
+  get(id?: string | number, requestConfig?: AxiosRequestConfig) {
+    return rawg
+      .get<T>(this.endpoint + "/" + id, requestConfig)
       .then((res) => res.data);
   }
 }

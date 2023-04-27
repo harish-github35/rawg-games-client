@@ -3,12 +3,7 @@
 import json from "../data/platforms.json";
 import { useQuery } from "@tanstack/react-query";
 import APIClient from "../services/api-client";
-
-export interface Platform {
-  id: number;
-  name: string;
-  slug: string;
-}
+import { Platform } from "../Types";
 
 // const usePlatform = () => useData<Platform>("/platforms/lists/parents");
 // const usePlatform = () => ({
