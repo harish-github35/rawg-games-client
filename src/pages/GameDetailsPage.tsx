@@ -7,10 +7,13 @@ import SsGrid from "../components/SsGrid";
 import useGame from "../hooks/useGame";
 import { Helmet } from "react-helmet";
 import { GridItem, Heading, SimpleGrid, Text } from "@chakra-ui/layout";
+import ErrorAlert from "../components/ErrorAlert";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
-  const { data, error, isLoading } = useGame(slug || "");
+  const { data, error, isLoading, isPaused } = useGame(slug || "");
+
+  if (isPaused) return <ErrorAlert>no internet</ErrorAlert>;
 
   if (isLoading) return <Spinner />;
 

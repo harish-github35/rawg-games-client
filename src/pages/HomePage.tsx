@@ -41,7 +41,7 @@ const HomePage = () => {
             <GameHeading />
 
             {/* ROW OF DROPDOWNS */}
-            <Flex marginBottom={5} gap={5}>
+            <Flex marginBottom={5} gap={5} flexWrap="wrap">
               <PlatformSelector />
               <SortSelector />
               <ClearQueryButton />

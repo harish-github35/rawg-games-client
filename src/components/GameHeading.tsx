@@ -23,7 +23,7 @@ const GameHeading = () => {
           <title>{heading} | Rawg Games Client</title>
         </Helmet>
       )}
-      <Heading marginY={5} fontSize="5xl" as="h1">
+      <Heading marginY={5} fontSize="4xl" as="h1">
         {heading}
       </Heading>
     </>
