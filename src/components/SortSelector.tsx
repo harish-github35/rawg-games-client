@@ -1,7 +1,8 @@
+import { Button } from "@chakra-ui/button";
+import { HStack, Text } from "@chakra-ui/layout";
+import { Menu, MenuButton, MenuItem, MenuList } from "@chakra-ui/menu";
 import { BsChevronDown } from "react-icons/bs";
 import useGameQueryStore from "../store";
-import { Button } from "@chakra-ui/button";
-import { Menu, MenuButton, MenuList, MenuItem } from "@chakra-ui/menu";
 
 const SortSelector = () => {
   const selectedOrder = useGameQueryStore((s) => s.gameQuery.sortOrder);
@@ -21,9 +22,12 @@ const SortSelector = () => {
 
   return (
     <Menu>
-      <MenuButton as={Button} rightIcon={<BsChevronDown />}>
-        Order by: {label || "Relevance"}
-      </MenuButton>
+      <HStack>
+        <Text>Order by:</Text>
+        <MenuButton as={Button} rightIcon={<BsChevronDown />}>
+          {label || "Relevance"}
+        </MenuButton>
+      </HStack>
       <MenuList>
         {sortOrders.map((order) => (
           <MenuItem key={order.value} onClick={() => setOrder(order.value)}>

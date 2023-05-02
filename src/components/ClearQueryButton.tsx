@@ -1,7 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { Text } from "@chakra-ui/layout";
-import useGameQueryStore from "../store";
 import { BsFillXCircleFill } from "react-icons/bs";
+import useGameQueryStore from "../store";
 
 const ClearQueryButton = () => {
   const resetFilters = useGameQueryStore((s) => s.resetFilters);

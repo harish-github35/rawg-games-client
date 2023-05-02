@@ -10,6 +10,8 @@ const GameCardContainer = ({ children }: { children: ReactNode }) => {
       _hover={{
         transform: "scale(1.05)",
       }}
+      h="100%"
+      minH="370px"
     >
       {children}
     </Box>

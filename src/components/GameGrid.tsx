@@ -1,12 +1,12 @@
-import InfiniteScroll from "react-infinite-scroll-component";
-import useGames from "../hooks/useGames";
-import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
-import GameCardContainer from "./GameCardContainer";
-import { Link } from "react-router-dom";
-import { SimpleGrid, Box, Text } from "@chakra-ui/layout";
+import { Box, SimpleGrid, Text } from "@chakra-ui/layout";
 import { Spinner } from "@chakra-ui/spinner";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { Link } from "react-router-dom";
+import useGames from "../hooks/useGames";
 import ErrorAlert from "./ErrorAlert";
+import GameCard from "./GameCard";
+import GameCardContainer from "./GameCardContainer";
+import GameCardSkeleton from "./GameCardSkeleton";
 
 const GameGrid = () => {
   //prettier-ignore
@@ -52,7 +52,11 @@ const GameGrid = () => {
 
         {data?.pages?.map((page) =>
           page.results.map((game) => (
-            <Link to={`/games/${game.slug}`} key={game.id}>
+            <Link
+              style={{ height: "100%" }}
+              to={`/games/${game.slug}`}
+              key={game.id}
+            >
               <GameCardContainer>
                 <GameCard game={game} />
               </GameCardContainer>

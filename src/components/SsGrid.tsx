@@ -1,9 +1,9 @@
 import { Image } from "@chakra-ui/image";
-import useScreenshots from "../hooks/useScreenshots";
-import { Spinner } from "@chakra-ui/spinner";
-import getCroppedImageUrl from "../services/image-url";
 import { SimpleGrid, Text } from "@chakra-ui/layout";
 import { useColorMode } from "@chakra-ui/react";
+import { Spinner } from "@chakra-ui/spinner";
+import useScreenshots from "../hooks/useScreenshots";
+import getCroppedImageUrl from "../utils/image-url";
 
 const SsGrid = ({ gameId }: { gameId: number }) => {
   const { colorMode } = useColorMode();

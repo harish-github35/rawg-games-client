@@ -1,4 +1,7 @@
 import { extendTheme, ThemeConfig } from "@chakra-ui/react";
+import "@fontsource/rubik/400.css";
+import "@fontsource/rubik/600.css";
+import "@fontsource/rubik/700.css";
 
 const config: ThemeConfig = {
   initialColorMode: "dark",
@@ -6,6 +9,10 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  fonts: {
+    heading: `'Rubik', sans-serif`,
+    body: `'Rubik', sans-serif`,
+  },
   colors: {
     gray: {
       50: "#f9f9f9",

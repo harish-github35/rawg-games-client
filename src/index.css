@@ -1,3 +1,38 @@
 .search-form {
   width: 100%;
 }
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+/* width and height of the scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-height: thin;
+}
+
+/* scrollbar track */
+* {
+  scrollbar-track-color: #4a4949;
+}
+
+/* scrollbar thumb */
+* {
+  scrollbar-thumb-color: #8a8989;
+  scrollbar-thumb-border-radius: 10px;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 7px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #4a4949;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #8a8989;
+  border-radius: 10px;
+}

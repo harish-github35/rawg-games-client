@@ -1,12 +1,13 @@
+import { Box, Flex, Grid, GridItem } from "@chakra-ui/layout";
 import { Show } from "@chakra-ui/media-query";
 import { Helmet } from "react-helmet";
 import ClearQueryButton from "../components/ClearQueryButton";
 import GameGrid from "../components/GameGrid";
 import GameHeading from "../components/GameHeading";
 import GenreList from "../components/GenreList";
+import GenreListMobile from "../components/GenreListMobile";
 import PlatformSelector from "../components/PlatformSelector";
 import SortSelector from "../components/SortSelector";
-import { Grid, GridItem, Flex, Box } from "@chakra-ui/layout";
 
 const HomePage = () => {
   return (
@@ -35,13 +36,16 @@ const HomePage = () => {
         </Show>
 
         {/* MAIN */}
-        <GridItem area="main">
+        <GridItem area="main" overflow="hidden">
           <Box paddingLeft={2}>
             {/* ROW OF HEADING */}
             <GameHeading />
-
+            {/* Topbar LIST */}
+            <Show below="lg">
+              <GenreListMobile />
+            </Show>
             {/* ROW OF DROPDOWNS */}
-            <Flex marginBottom={5} gap={5} flexWrap="wrap">
+            <Flex marginY={5} gap={5} flexWrap="wrap">
               <PlatformSelector />
               <SortSelector />
               <ClearQueryButton />

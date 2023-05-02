@@ -1,10 +1,10 @@
 import { Button } from "@chakra-ui/button";
-import { HStack, Heading, List, ListItem } from "@chakra-ui/layout";
 import { Image } from "@chakra-ui/image";
+import { HStack, Heading, List, ListItem } from "@chakra-ui/layout";
 import { Spinner } from "@chakra-ui/spinner";
 import useGenres from "../hooks/useGenres";
-import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
+import getCroppedImageUrl from "../utils/image-url";
 
 const GenreList = () => {
   const selectedGenre = useGameQueryStore((s) => s.gameQuery.genreId);
