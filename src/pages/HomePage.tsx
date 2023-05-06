@@ -41,7 +41,7 @@ const HomePage = () => {
             {/* ROW OF HEADING */}
             <GameHeading />
             {/* Topbar LIST */}
-            <Show below="lg">
+            <Show breakpoint="(max-width: 991.98px)">
               <GenreListMobile />
             </Show>
             {/* ROW OF DROPDOWNS */}
